@@ -1,0 +1,13 @@
+.mainImage {
+  display: flex;
+  margin-top: 120px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.mainImage img {
+  background-repeat: no-repeat;
+  object-fit: cover;
+  width: 92%;
+  height: 100%;
+}

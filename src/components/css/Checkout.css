@@ -1,0 +1,75 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  margin-top: 75px;
+  align-items: center;
+  background-color: #fff;
+}
+
+.checkout_img > img {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.subtotal-container {
+  width: 60%;
+}
+
+.checkout_items {
+  margin: 20px;
+  background-color: white;
+  width: 75%;
+  margin-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkout h1 {
+  color: rgb(56, 54, 54);
+  margin: 0px 20px;
+  box-shadow: 0 1px 0px 0 rgb(0 0 0 / 20%);
+  width: 75%;
+  background-color: white;
+  text-align: center;
+}
+
+.foodItem_card {
+  box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  display: flex;
+  width: 45%;
+}
+
+.cartItem_image > img {
+  width: 180px;
+  height: 180px;
+  margin: 0px 30px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.cartItem_info > h3 {
+  margin: 10px;
+  font-weight: 500;
+  margin-left: 0px;
+}
+
+.deleteBtn {
+  margin: 10px;
+  margin-left: 0px;
+  color: darkgray;
+  outline: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.emptyCart {
+  width: 20%;
+  height: 20%;
+}
+
+.emptyCart__img {
+  width: 100%;
+  height: 100%;
+}

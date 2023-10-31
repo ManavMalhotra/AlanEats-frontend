@@ -1,0 +1,48 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: hsl(0, 0%, 100%);
+  margin-top: 40px;
+  padding: 2px;
+}
+
+.alan_logo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.alan_logo img {
+  object-fit: contain;
+  height: 113px;
+  border-radius: 30%;
+  padding-bottom: 0px;
+  margin: auto;
+}
+
+.contact_us > h1 {
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.names {
+  color: green;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.contact_us {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.names > a {
+  text-decoration: none;
+  color: #cd193f;
+}

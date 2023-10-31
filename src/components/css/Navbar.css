@@ -1,0 +1,120 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: white;
+  height: 15vh;
+}
+
+.nav img {
+  object-fit: contain;
+  width: 140px;
+  height: 110px;
+  border-radius: 30%;
+  margin-left: 15px;
+  padding-bottom: 0px;
+}
+
+.nav_search {
+  display: flex;
+  flex: 0.6;
+  margin: 0px 10px;
+  cursor: pointer;
+  border-top: 0.5px solid #164011;
+  box-shadow: 0 8px 8px 0 rgba(26, 20, 20, 0.2);
+  border-radius: 5px;
+}
+
+.nav_search input {
+  height: 26px;
+  height: auto;
+  padding-left: 12px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.nav_searchIcon {
+  background-color: #164011;
+  color: white;
+  padding: 5px;
+  height: 50px !important;
+  padding: 0px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.nav_header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 20px;
+}
+
+.nav_signin {
+  padding: 0px 10px 5px 10px;
+  cursor: pointer;
+}
+
+.nav_cart {
+  color: #164011;
+  transform: scale(1.2);
+  padding-right: 5px;
+  margin: 0px 20px;
+}
+
+.loggedUser {
+  display: flex;
+  margin: 0px 5px;
+  align-items: center;
+}
+
+.loggedUser .user_logo {
+  width: 50px;
+  height: 50px;
+}
+
+.loggedUser_info {
+  margin-left: 5px;
+}
+
+.loggedUser_info > h4 {
+  margin-bottom: 2px;
+  color: rgb(41, 39, 39);
+  box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav_cart-f {
+  color: white;
+}
+
+.logout_Btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: 2px;
+  color: rgb(158, 158, 158);
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
+}
+
+.logout_Btn:hover {
+  transform: scale(1.1);
+}
+
+.nav_search .MuiSvgIcon-root {
+  font-size: 2.5rem !important;
+}
+
+.adminBtn {
+  margin-right: 25px;
+  border: none;
+  outline: none;
+  background-color: white;
+}

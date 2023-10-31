@@ -1,0 +1,184 @@
+let menuItems=[];
+// let userId = "";
+
+intent('(Hello|hi|hey) alan',async(p)=>{
+    let api_url = "https://alaneats.herokuapp.com/api/food";
+
+    const response = await api.axios.get(api_url);
+    
+    menuItems = response.data.data;
+//     console.log(menuItems);
+     p.play({command:"allItems",menuItems});
+    p.play("hey foodie welcome to alan eats");
+    p.play("have a look at all our items");
+    p.play("you can select any item and view its ingredients reviews and rating and then ask me to add it to your cart if you like it");
+        
+});
+const confirmation = context(()=>{
+    intent("yes",(p)=>{
+//         p.play("sure you can leave a note to the chef and customise the ingredients in your food items");
+
+        p.play("sure you can add or remove items in your cart according to your preference");
+    })
+    intent("no",async(p)=>{
+        p.play("okay thats great lets finalise your order");
+    })
+})
+
+intent('(show|open) (me|) (the|) cart ',async(p)=>{
+
+     p.play({command:"showcart",route: '/checkout'});
+    p.play("here is your cart");
+    p.play("would you like to change order");
+        p.then(confirmation);
+});
+
+
+let foodId = "";
+
+
+
+
+
+intent('Add burger to the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("burger")){
+                foodId= item._id;
+            console.log(foodId);
+            p.play({command:"myItem",foodId});   
+                p.play(`added burger to the cart`);
+//         p.play("would you like to change order");
+//         p.then(confirmation);
+        }      
+    })
+})
+
+intent('Add Pizza to the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("Pizza")){
+                foodId= item._id;
+            console.log(foodId);
+            p.play({command:"myItem",foodId});   
+                p.play(`added pizza to the cart`);
+        }      
+    })
+})
+
+intent('Add pasta to the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("pasta")){
+                foodId= item._id;
+            console.log(foodId);
+            p.play({command:"myItem",foodId});   
+                p.play(`added pasta to the cart`);
+        }      
+    })
+})
+
+intent('Add noodles to the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("noodles")){
+                foodId= item._id;
+            console.log(foodId);
+            p.play({command:"myItem",foodId});   
+                p.play(`added noodles to the cart`);
+        }      
+    })
+})
+
+intent('Add parantha to the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("parantha")){
+                foodId= item._id;
+            console.log(foodId);
+            p.play({command:"myItem",foodId});   
+                p.play(`added parantha to the cart`);
+        }      
+    })
+})
+
+intent('Add momos to the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("momos")){
+                foodId= item._id;
+            console.log(foodId);
+            p.play({command:"myItem",foodId});   
+                p.play(`added momos to the cart`);
+        }      
+    })
+})
+
+
+
+
+intent('remove pasta from the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("pasta")){
+        foodId= item._id;
+               
+            console.log(foodId);
+            p.play({command:"removeItem",foodId});   
+                p.play(`removed pasta from the cart`);
+        }      
+    })
+})
+
+intent('remove noodles from the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("noodles")){
+        foodId= item._id;
+               
+            console.log(foodId);
+            p.play({command:"removeItem",foodId});   
+                p.play(`removed noodles from the cart`);
+        }      
+    })
+})
+
+intent('remove burger from the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("burger")){
+        foodId= item._id;
+               
+            console.log(foodId);
+            p.play({command:"removeItem",foodId});   
+                p.play(`removed burger from the cart`);
+        }      
+    })
+})
+
+intent('remove momos from the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("momos")){
+        foodId= item._id;
+               
+            console.log(foodId);
+            p.play({command:"removeItem",foodId});   
+                p.play(`removed momos from the cart`);
+        }      
+    })
+})
+
+intent('remove parantha from the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("parantha")){
+        foodId= item._id;
+               
+            console.log(foodId);
+            p.play({command:"removeItem",foodId});   
+                p.play(`removed parantha from the cart`);
+        }      
+    })
+})
+
+intent('remove pizza from the cart',async(p)=>{
+    menuItems.map((item)=>{
+    if(item.label.includes("pizza")){
+        foodId= item._id;
+               
+            console.log(foodId);
+            p.play({command:"removeItem",foodId});   
+                p.play(`removed pizza from the cart`);
+        }      
+    })
+})

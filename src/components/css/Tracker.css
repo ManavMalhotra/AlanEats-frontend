@@ -1,0 +1,81 @@
+.main {
+  background-color: #fff;
+  margin: 8rem 5rem;
+  margin-bottom: 0;
+  height: 50vh;
+  padding: 30px;
+}
+
+.main > .first {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main > .first > h1 {
+  font-size: 2.8rem;
+  color: grey !important;
+}
+
+.main > .first > h3 {
+  font-size: 1.5rem;
+  color: grey !important;
+}
+
+.main > .second {
+  margin-top: 14px;
+  margin-left: 4px;
+}
+
+.main > .second > .one,
+.two,
+.three,
+.four,
+.five {
+  display: flex;
+  padding: 13px;
+  font-size: 1.5rem;
+}
+
+.icon {
+  color: green;
+  margin-right: 2.5rem;
+  font-size: 50px;
+}
+
+.MuiSvgIcon-root {
+  font-size: 2rem !important;
+}
+
+.arrow {
+  transform: rotate(90deg);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-left {
+  margin-right: 50px;
+}
+
+.label-green {
+  color: green !important;
+  font-size: 1.7rem;
+  transition: all 0.45s ease-out;
+}
+
+.label-grey {
+  color: grey !important;
+}
+
+.container-right .MuiTypography-body1 {
+  font-size: 1.5rem;
+}
+
+.time {
+  font-size: 1.2rem !important;
+  color: green;
+}

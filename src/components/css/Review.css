@@ -1,0 +1,105 @@
+/* add review section */
+
+.addReview {
+  border: 1px solid grey;
+  height: fit-content;
+  padding: 25px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.addReview > h2 {
+  text-align: center;
+}
+
+.item_info {
+  display: flex;
+  box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 12px;
+}
+
+.image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.info {
+  margin-top: 20px;
+}
+
+.info > h5 {
+  margin-bottom: 8px;
+  width: 160px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form > textarea {
+  margin: 8px;
+  padding: 5px;
+  outline: none;
+}
+
+.addReviewBtn {
+  background-color: honeydew;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 4px 15px;
+  margin-top: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  outline: none;
+  width: -webkit-fill-available;
+}
+
+.addReviewBtn:hover {
+  background-color: rgb(233, 233, 233);
+  border: none;
+  color: black;
+  font-weight: 500;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* display review item details */
+
+.review_data {
+  box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.2);
+  margin: 15px 30px;
+}
+
+.review_data > h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user_details {
+  display: flex;
+  align-items: center;
+}
+
+.user_details > p {
+  margin: 0px 20px;
+}
+
+.food_rating {
+  display: flex;
+  align-items: center;
+}
+
+.time_stamp {
+  margin: 10px;
+}
+
+.review_data > p {
+  width: 90%;
+}
+
+form > textarea {
+  background-color: #f1f1f1;
+}

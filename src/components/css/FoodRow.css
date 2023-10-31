@@ -1,0 +1,65 @@
+.foodRow {
+  display: flex;
+  margin: 15px;
+  margin-top: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem;
+}
+
+.categoryName {
+  font-size: 80px;
+  text-align: center;
+  color: #164011;
+}
+
+.category {
+  margin-top: 40px;
+  margin-left: 35px;
+  font-size: 50px;
+  color: #164011;
+}
+
+.foodRow::-webkit-scrollbar {
+  display: none;
+}
+
+.item-card {
+  margin: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item-card img {
+  object-fit: cover;
+  width: 250px;
+  height: 250px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.product-info h4 {
+  color: rgb(116, 110, 110);
+  margin: 5px;
+  margin-top: 0px;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.addToCart {
+  color: #164011;
+  font-size: 15px;
+}
+
+.addToCart:hover {
+  transform: scale(1.1);
+  color: rgb(116, 110, 110);
+}
