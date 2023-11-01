@@ -21,7 +21,7 @@ const SignIn = () => {
       if (email.length > 0 && password.length > 0) {
         let user = [];
         user = await axios.post(
-          "/api/user/login",
+          "https://food-app-backend-bdm8.onrender.com/api/user/login",
           {
             email: email,
             password: password,

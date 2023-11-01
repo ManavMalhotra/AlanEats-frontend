@@ -46,7 +46,7 @@ const Checkout = () => {
 
   const getUser = async () => {
     axios
-      .get(`/api/user/${user[0]._id}`)
+      .get(`https://food-app-backend-bdm8.onrender.com/api/user/${user[0]._id}`)
       .then((res) => {
         cartData = res.data.user.cart;
         temp1 = setFoodQty();
@@ -64,7 +64,7 @@ const Checkout = () => {
       arr = await Promise.all(
         temp1.map(async (id) => {
           let res = await axios.get(
-            `/api/food/${id}`
+            `https://food-app-backend-bdm8.onrender.com/api/food/${id}`
           );
           return res.data.data;
         })
@@ -77,7 +77,7 @@ const Checkout = () => {
 
   let removeFromCart = async (foodId) => {
     try {
-      await axios.post("/api/user/cart/delete", {
+      await axios.post("https://food-app-backend-bdm8.onrender.com/api/user/cart/delete", {
         user: user[0]._id,
         food: foodId,
       });

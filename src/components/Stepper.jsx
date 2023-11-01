@@ -53,7 +53,7 @@ export default function VerticalLinearStepper({ orderId }) {
 
   const getOrderData = async () => {
     const data = await axios.get(
-      `/api/order/${orderId}`
+      `https://food-app-backend-bdm8.onrender.com/api/order/${orderId}`
     );
     setOrderData({ ...data.data.data });
   };

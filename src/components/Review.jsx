@@ -13,7 +13,7 @@ const Review = ({ reviewDetails }) => {
     let userData;
     try {
      userData = await axios.get(
-       `/api/user/${reviewDetails.user}`
+       `https://food-app-backend-bdm8.onrender.com/api/user/${reviewDetails.user}`
      );
       setUserName(userData.data.user.name);
       setUserImage(userData.data.user.userImage);

@@ -15,7 +15,7 @@ const FoodRow = ({ type }) => {
   let user = JSON.parse(userCredentials);
 
   const getAllFoodItems = () => {
-    axios.get("/api/food").then((res) => {
+    axios.get("https://food-app-backend-bdm8.onrender.com/api/food").then((res) => {
       if (type === "fast food") {
         setFoodItems(res.data.data);
       } else {

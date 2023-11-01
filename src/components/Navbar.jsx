@@ -50,7 +50,7 @@ const Navbar = () => {
   }, []);
 
   const getAllFoodItems = () => {
-    axios.get("/api/food").then((res) => {
+    axios.get("https://food-app-backend-bdm8.onrender.com/api/food").then((res) => {
       setFoodItems(res.data.data);
     });
   };

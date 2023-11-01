@@ -49,7 +49,7 @@ function Payment(props) {
       return;
     }
 
-    const data = await fetch("http://localhost:3000/razorpay", {
+    const data = await fetch("https://food-app-backend-bdm8.onrender.com/razorpay", {
       method: "POST",
       body: JSON.stringify({
         cartAmount: props.price,
@@ -81,7 +81,7 @@ function Payment(props) {
           "orderId",
           JSON.stringify(response.razorpay_order_id)
         );
-        axios.put(`/api/user/cart/${user[0]?._id}`).then((res) => {
+        axios.put(`https://food-app-backend-bdm8.onrender.com/api/user/cart/${user[0]?._id}`).then((res) => {
           dispatch(PayAction(false));
           dispatch(PaymentAction(false));
 
@@ -102,7 +102,7 @@ function Payment(props) {
 
   const createOrder = async (orderId) => {
     try {
-      await axios.post("/api/order", {
+      await axios.post("https://food-app-backend-bdm8.onrender.com/api/order", {
         orderId,
         status: "Placed",
         createdAt: Date.now(),

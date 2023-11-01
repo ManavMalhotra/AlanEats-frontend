@@ -30,7 +30,7 @@ const AddReview = ({ itemDetails }) => {
   const handleReviewRequest = async () => {
     console.log("Value",value);
     try {
-      await axios.post("/api/review", {
+      await axios.post("https://food-app-backend-bdm8.onrender.com/api/review", {
         description: reviewDescription,
         rating: value,
         food: itemDetails._id,

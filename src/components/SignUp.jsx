@@ -29,7 +29,7 @@ const SignUp = () => {
       ) {
         e.preventDefault();
         const user = await axios.post(
-          "/api/user/signup",
+          "https://food-app-backend-bdm8.onrender.com/api/user/signup",
           {
             userImage: img,
             name: name,
