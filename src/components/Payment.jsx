@@ -25,7 +25,7 @@ function loadScript(src) {
   });
 }
 
-const __DEV__ = document.domain === "localhost";
+// const __DEV__ = document.domain === "localhost";
 
 function Payment(props) {
   let userCredentials = localStorage.getItem("user logged in");
@@ -63,7 +63,7 @@ function Payment(props) {
     }).then((t) => t.json());
 
     const options = {
-      key: __DEV__ ? "rzp_test_oKt4aYMDlmmRMX" : "PRODUCTION_KEY",
+      key: "rzp_test_oKt4aYMDlmmRMX",
       currency: data.currency,
       amount: props.price.toString(), //data.amount.toString(),
       order_id: data.id,
