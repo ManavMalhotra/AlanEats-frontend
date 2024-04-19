@@ -12,6 +12,7 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
 import MainImage from "./components/MainImage";
+import MainCarousel from "./components/MainCarousel";
 import Payment from "./components/Payment";
 import { useSelector } from "react-redux";
 // import { PayAction } from "./redux/actions/payAction";
@@ -39,6 +40,7 @@ let App = () => {
     <Switch>
       <Route exact path="/">
         <Navbar />
+        <MainCarousel />
         <MainImage />
         <FoodRow type="Breakfast" />
         <FoodRow type="Lunch" />

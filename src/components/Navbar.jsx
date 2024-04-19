@@ -50,9 +50,11 @@ const Navbar = () => {
   }, []);
 
   const getAllFoodItems = () => {
-    axios.get("https://food-app-backend-bdm8.onrender.com/api/food").then((res) => {
-      setFoodItems(res.data.data);
-    });
+    axios
+      .get("https://food-app-backend-bdm8.onrender.com/api/food")
+      .then((res) => {
+        setFoodItems(res.data.data);
+      });
   };
 
   useEffect(() => {
@@ -115,7 +117,6 @@ const Navbar = () => {
           <ShoppingBasketIcon className="cartIcon" />
         </div>
 
-
         {!user ? (
           <span
             className="nav_signin"
@@ -127,7 +128,11 @@ const Navbar = () => {
           </span>
         ) : (
           <div className="loggedUser">
-            <img className="user_logo" src={user[0]?.userImage} />
+            {user[0].userImage ? (
+              <img className="user_logo" src={user[0]?.userImage} />
+            ) : (
+              <div className="bg-gray-600 rounded-full user_logo" />
+            )}
             <div className="loggedUser_info">
               <h4>{user[0]?.name}</h4>
               <button
