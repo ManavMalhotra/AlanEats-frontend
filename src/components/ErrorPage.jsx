@@ -11,7 +11,9 @@ const ErrorPage = () => {
         height: "100vh",
       }}
     >
-      <img src="https://cdn.dribbble.com/users/718859/screenshots/3267029/jisunpark_404-error.gif" />
+      <img src="https://cdn.dribbble.com/users/718859/screenshots/3267029/jisunpark_404-error.gif" 
+      alt="404 error"
+      />
       <div id="info"></div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import { useSnackbar } from 'notistack';
 
 export function AlertMessage({ message }) {
@@ -12,10 +12,10 @@ export function AlertMessage({ message }) {
 
     useEffect(() => {
         console.log("inside useEffect")
-        handleClickVariant('success');
     }, [])
     return (
         <React.Fragment>
+            {handleClickVariant('success')}
         </React.Fragment>
     );
 }

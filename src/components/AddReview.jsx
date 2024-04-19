@@ -6,22 +6,23 @@ import { Box } from "@material-ui/core";
 import StarIcon from "@material-ui/icons/Star";
 import axios from "axios";
 
-const labels = {
-  0.5: "Useless",
-  1: "Useless+",
-  1.5: "Poor",
-  2: "Poor+",
-  2.5: "Ok",
-  3: "Ok+",
-  3.5: "Good",
-  4: "Good+",
-  4.5: "Excellent",
-  5: "Excellent+",
-};
+// const labels = {
+//   0.5: "Useless",
+//   1: "Useless+",
+//   1.5: "Poor",
+//   2: "Poor+",
+//   2.5: "Ok",
+//   3: "Ok+",
+//   3.5: "Good",
+//   4: "Good+",
+//   4.5: "Excellent",
+//   5: "Excellent+",
+// };
 
 const AddReview = ({ itemDetails }) => {
   let [value, setValue] = useState(0.5);
-  let [hover, setHover] = useState("");
+  
+  let [ setHover] = useState("");
   let [reviewDescription, setReviewDescription] = useState("");
 
   let userCredentials = localStorage.getItem("user logged in");
@@ -46,7 +47,7 @@ const AddReview = ({ itemDetails }) => {
       <h2>Add Review Here</h2>
       <div className="item_info">
         <div className="image">
-          <img src={itemDetails.image_url} alt="item image" />
+          <img src={itemDetails.image_url} alt="item" />
         </div>
         <div className="info">
           <h5>{itemDetails.label}</h5>

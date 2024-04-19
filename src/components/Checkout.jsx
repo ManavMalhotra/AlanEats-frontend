@@ -4,7 +4,7 @@ import "./css/Checkout.css";
 import Subtotal from "./Subtotal";
 import { useEffect, useState } from "react";
 import CartImg from "./cartImg.jpg";
-import Payment from "./Payment";
+// import Payment from "./Payment";
 import Navbar from "./Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { PayAction } from "../redux/actions/payAction";
@@ -17,7 +17,7 @@ const Checkout = () => {
   const history = useHistory();
   let [totalItems, setTotalItems] = useState(0);
   let [totalCartPrice, setTotalCartPrice] = useState(0);
-  let [totalCartPrice1, setTotalCartPrice1] = useState(0);
+  // let [totalCartPrice1, setTotalCartPrice1] = useState(0);
   let temp1;
   let [foodData, setFoodData] = useState([]);
   let [showPay, setShowPay] = useState(false);
@@ -77,10 +77,13 @@ const Checkout = () => {
 
   let removeFromCart = async (foodId) => {
     try {
-      await axios.post("https://food-app-backend-bdm8.onrender.com/api/user/cart/delete", {
-        user: user[0]._id,
-        food: foodId,
-      });
+      await axios.post(
+        "https://food-app-backend-bdm8.onrender.com/api/user/cart/delete",
+        {
+          user: user[0]._id,
+          food: foodId,
+        }
+      );
       document.location.reload(true);
     } catch (err) {
       console.log(err);
@@ -88,7 +91,9 @@ const Checkout = () => {
   };
 
   useEffect(() => {
-    if (user?.length !== 0) getUser();
+    if (user?.length !== 0) {
+      getUser();
+    }
   }, []);
 
   useEffect(() => {
@@ -100,14 +105,13 @@ const Checkout = () => {
       setTotalItems(items);
       price = price + item.price * map1.get(item._id);
       setTotalCartPrice(price);
-      setTotalCartPrice1(price);
     });
     dispatch(CartPriceAction(price));
   }, [map1, foodData]);
 
   return (
     <>
-      {foodData.length > 0 && isPay ? (
+      {(foodData.length > 0 && isPay) || showPay ? (
         history.push("/checkout/payment")
       ) : (
         <>

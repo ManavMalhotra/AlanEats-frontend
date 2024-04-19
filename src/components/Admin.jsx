@@ -10,8 +10,8 @@ const Admin = () => {
   const [orderData, setOrderData] = useState([]);
   const [newStatus, setNewStatus] = useState({});
 
-  const orderId = JSON.parse(localStorage.getItem("orderId"));
-  const time = JSON.parse(localStorage.getItem("orderTime"));
+  // const orderId = JSON.parse(localStorage.getItem("orderId"));
+  // const time = JSON.parse(localStorage.getItem("orderTime"));
 
   useEffect(() => {
     // Use a separate function to fetch the order data and avoid unnecessary dependencies
@@ -29,7 +29,6 @@ const Admin = () => {
 
     fetchOrderData(); // Call the function
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Empty dependency array for initial data fetch
 
   useEffect(() => {
@@ -61,8 +60,6 @@ const Admin = () => {
         console.error("Error updating order status:", error);
       }
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newStatus]);
 
   return (
