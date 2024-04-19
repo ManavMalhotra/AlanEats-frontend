@@ -5,9 +5,10 @@ import "./css/FoodRow.css";
 
 const ProductCard = ({ foodItem, addToCart, user }) => {
   let history = useHistory();
+  
   return (
     <>
-      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
         <div
           onClick={() => {
             return user
@@ -19,7 +20,7 @@ const ProductCard = ({ foodItem, addToCart, user }) => {
           <img
             className="object-cover object-center w-full h-64 p-8 rounded-t-lg"
             src={foodItem.image_url}
-            alt="product image"
+            alt="product"
           />
         </div>
         <div className="px-5 pb-5">

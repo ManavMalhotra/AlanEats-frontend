@@ -1,18 +1,13 @@
 import React from "react";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import "./css/FoodRow.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { capitalize } from "@material-ui/core";
 import ProductCard from "./ProductCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const FoodRow = ({ type }) => {
-  let history = useHistory();
   const [foodItems, setFoodItems] = useState([]);
-  const [newState, setNewState] = useState([]);
 
   let userCredentials = localStorage.getItem("user logged in");
   let user = JSON.parse(userCredentials);
@@ -122,7 +117,7 @@ const FoodRow = ({ type }) => {
       >
         {foodItems.map(
           (foodItem) =>
-            foodItem.type == type && (
+            foodItem.type === type && (
               <ProductCard
                 key={foodItem._id}
                 foodItem={foodItem}
