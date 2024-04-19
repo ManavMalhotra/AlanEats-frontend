@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 // import alanBtn from '@alan-ai/alan-sdk-web';
 // import { useEffect, useState } from "react";
 // import axios from "axios";
@@ -11,15 +11,15 @@ import Checkout from "./components/Checkout";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
-import MainImage from './components/MainImage';
-import Payment from './components/Payment';
-import { useDispatch, useSelector } from 'react-redux';
+import MainImage from "./components/MainImage";
+import Payment from "./components/Payment";
+import { useDispatch, useSelector } from "react-redux";
 // import { PayAction } from "./redux/actions/payAction";
 import Admin from "./components/Admin";
 import ErrorPage from "./components/ErrorPage";
 // import { PaymentAction } from "./redux/actions/payAction";
-import PayModal from './components/PayModal';
-import Tracker from './components/Tracker';
+import PayModal from "./components/PayModal";
+import Tracker from "./components/Tracker";
 
 // if (!userCredentials) {
 // localStorage.setItem("user logged in", JSON.stringify([{ email: null }]));
@@ -33,15 +33,16 @@ let App = () => {
   const orderId = JSON.parse(localStorage.getItem("orderId"));
 
   // const [alanInstance, setAlanInstance] = useState(null);
-  const { totalPrice } = useSelector(state => state.pay);
-
+  const { totalPrice } = useSelector((state) => state.pay);
 
   return (
     <Switch>
       <Route exact path="/">
         <Navbar />
         <MainImage />
-        <FoodRow type="fast food" />
+        <FoodRow type="Breakfast" />
+        <FoodRow type="Lunch" />
+        <FoodRow type="Snacks" />
         <Footer />
       </Route>
       <Route path="/signin">
@@ -53,7 +54,7 @@ let App = () => {
       <Route path="/signup">
         <SignUp />
       </Route>
-      <Route path="/productDetail/:foodId" >
+      <Route path="/productDetail/:foodId">
         <Navbar />
         <ProductDetail />
         <Footer />
@@ -68,23 +69,27 @@ let App = () => {
         <Footer />
       </Route>
 
-      {user !== null && user[0]?.email === "gurneet@gmail.com" ?
-        <Route exact path="/admin" component={Admin} /> : <Route path="/admin" component={ErrorPage} />
-      }
+      {user !== null && user[0]?.email === "manavmalhotrafrnd4u@gmail.com" ? (
+        <Route exact path="/admin" component={Admin} />
+      ) : (
+        <Route path="/admin" component={ErrorPage} />
+      )}
 
-      {orderId && user !== null ?
+      {orderId && user !== null ? (
         <Route exact path="/foodtracker">
           <Navbar />
           <Tracker />
           <Footer />
-        </Route> : <Route path="/foodtracker" component={ErrorPage} />}
+        </Route>
+      ) : (
+        <Route path="/foodtracker" component={ErrorPage} />
+      )}
 
       <Route exact path="/order/payment/success">
         <PayModal orderId={orderId} />
       </Route>
-
-    </Switch >
+    </Switch>
   );
-}
+};
 
 export default App;

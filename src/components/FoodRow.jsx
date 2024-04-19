@@ -5,6 +5,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { capitalize } from "@material-ui/core";
+import ProductCard from "./ProductCard";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const FoodRow = ({ type }) => {
   let history = useHistory();
@@ -15,53 +18,121 @@ const FoodRow = ({ type }) => {
   let user = JSON.parse(userCredentials);
 
   const getAllFoodItems = () => {
-    axios.get("https://food-app-backend-bdm8.onrender.com/api/food").then((res) => {
-      if (type === "fast food") {
+    axios
+      .get("https://food-app-backend-bdm8.onrender.com/api/food")
+      .then((res) => {
         setFoodItems(res.data.data);
-      } else {
-        setNewState(
-          res.data.data.filter((item) => {
-            if (item.type === type) {
-              return item;
-            }
-          })
-        );
-        setFoodItems(newState);
-      }
-    });
+      });
   };
 
   useEffect(() => {
     getAllFoodItems();
-  }, [foodItems]);
+  }, []);
+
+  let addToCart = async (foodId) => {
+    try {
+      await axios
+        .post("https://food-app-backend-bdm8.onrender.com/api/user/cart", {
+          food: foodId,
+          user: user[0]._id.trim(),
+        })
+        .then((res) => {
+          console.log(res);
+
+          if (res.status === 200) {
+            alert("Item added to cart");
+          }
+        });
+      // document.location.reload(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  console.log(foodItems);
 
   return (
-    <>
-      <h1 className={`${type === "fast food" ? "categoryName" : "category"}`}>{capitalize(type)} </h1>
-      <div className="foodRow">
-        {foodItems.map((foodItem) => (
-          <div className="item-card" key={foodItem._id}>
-            <img
-              src={foodItem.image_url}
-              alt="food item"
-              onClick={() => {
-                return user
-                  ? history.push(`/productDetail/${foodItem._id}`)
-                  : alert(
-                      "please signin to your account before doing anything"
-                    );
-              }}
-            />
-            <div className="product">
-              <div className="product-info">
-                <h4>{foodItem.label}</h4>
-                <h4>₹{foodItem.price}</h4>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </>
+    <div className="py-4 md:px-8">
+      <h1>{type.toUpperCase()}</h1>
+      {/* <div className="foodRow">
+        {foodItems.map(
+          (foodItem) =>
+            foodItem.type == type && (
+              <ProductCard
+                foodItem={foodItem}
+                addToCart={addToCart}
+                user={user}
+              />
+            )
+        )}
+      </div> */}
+      <Carousel
+        additionalTransfrom={0}
+        arrows
+        autoPlaySpeed={3000}
+        centerMode={false}
+        // className=""
+        containerClass="container-with-dots"
+        // dotListClass=""
+        draggable
+        focusOnSelect={false}
+        infinite
+        // itemClass="carousel-item-padding-40-px"
+        keyBoardControl
+        minimumTouchDrag={80}
+        pauseOnHover
+        renderArrowsWhenDisabled={false}
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        responsive={{
+          desktop: {
+            breakpoint: {
+              max: 3000,
+              min: 1024,
+            },
+            items: 3,
+            partialVisibilityGutter: 40,
+          },
+          mobile: {
+            breakpoint: {
+              max: 464,
+              min: 0,
+            },
+            items: 1,
+            partialVisibilityGutter: 30,
+          },
+          tablet: {
+            breakpoint: {
+              max: 1024,
+              min: 464,
+            },
+            items: 2,
+            partialVisibilityGutter: 30,
+          },
+        }}
+        rewind={false}
+        rewindWithAnimation={false}
+        rtl={false}
+        shouldResetAutoplay
+        showDots={false}
+        sliderClass=""
+        slidesToSlide={1}
+        swipeable
+        itemAriaLabel="item-card"
+      >
+        {foodItems.map(
+          (foodItem) =>
+            foodItem.type == type && (
+              <ProductCard
+                key={foodItem._id}
+                foodItem={foodItem}
+                addToCart={addToCart}
+                user={user}
+              />
+            )
+        )}
+      </Carousel>
+    </div>
   );
 };
 

@@ -90,7 +90,7 @@ const Navbar = () => {
       <div className="nav_header">
         {user &&
         user[0] !== null &&
-        user[0]?.email === "gurneet@gmail.com" ? (
+        user[0]?.email === "manavmalhotrafrnd4u@gmail.com" ? (
           <div className="adminLink">
             <button
               className="adminBtn"
@@ -114,6 +114,7 @@ const Navbar = () => {
         >
           <ShoppingBasketIcon className="cartIcon" />
         </div>
+
 
         {!user ? (
           <span

@@ -22,7 +22,6 @@ const Review = ({ reviewDetails }) => {
     }
   };
 
-
   useEffect(() => {
     getUserData();
   }, []);

@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -18,7 +17,9 @@ const Admin = () => {
     // Use a separate function to fetch the order data and avoid unnecessary dependencies
     const fetchOrderData = async () => {
       try {
-        const res = await axios.get(`https://food-app-backend-bdm8.onrender.com/api/order`);
+        const res = await axios.get(
+          `https://food-app-backend-bdm8.onrender.com/api/order`
+        );
         setOrderData([...res.data.data]);
       } catch (error) {
         // Handle errors here
@@ -35,20 +36,26 @@ const Admin = () => {
     if (newStatus.status === "Completed") {
       // Use a try-catch block for axios requests
       try {
-        console.log("new status inside delete", newStatus)
-        axios.delete(`https://food-app-backend-bdm8.onrender.com/api/order/${newStatus.orderId}`);
+        console.log("new status inside delete", newStatus);
+        axios.delete(
+          `https://food-app-backend-bdm8.onrender.com/api/order/${newStatus.orderId}`
+        );
       } catch (error) {
         // Handle errors here
         console.error("Error deleting order:", error);
       }
-    } else if (newStatus.orderId) { // Check if newStatus.orderId exists
+    } else if (newStatus.orderId) {
+      // Check if newStatus.orderId exists
       try {
         console.log("newStatus", newStatus);
-        axios.patch(`https://food-app-backend-bdm8.onrender.com/api/order/${newStatus.orderId}`, {
-          status: newStatus.status,
-          orderId: newStatus.orderId,
-          createdAt: newStatus.createdAt,
-        });
+        axios.patch(
+          `https://food-app-backend-bdm8.onrender.com/api/order/${newStatus.orderId}`,
+          {
+            status: newStatus.status,
+            orderId: newStatus.orderId,
+            createdAt: newStatus.createdAt,
+          }
+        );
       } catch (error) {
         // Handle errors here
         console.error("Error updating order status:", error);
@@ -76,7 +83,9 @@ const Admin = () => {
                 <th>Order Status</th>
               </tr>
             </thead>
-            <tbody> {/* Use tbody for table body */}
+            <tbody>
+              {" "}
+              {/* Use tbody for table body */}
               {orderData.map((order, idx) => (
                 <tr key={order.orderId}>
                   <td>{idx + 1}</td>
@@ -131,4 +140,3 @@ const Admin = () => {
 };
 
 export default Admin;
-

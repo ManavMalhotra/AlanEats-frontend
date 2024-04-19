@@ -14,17 +14,26 @@ const ProductDetail = () => {
   let [ingredients, setIngredients] = useState([]);
   let [reviewData, setReviewData] = useState([]);
   let reviewsList = [];
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    let userCredentials = localStorage.getItem("user logged in");
+    let user = JSON.parse(userCredentials);
+    setUser(user);
+    console.log(user);
+  }, []);
 
-  let userCredentials = localStorage.getItem("user logged in");
-  let user = JSON.parse(userCredentials);
+
 
   let addToCart = async () => {
     try {
-      await axios.post("https://food-app-backend-bdm8.onrender.com/api/user/cart", {
-        food: foodId,
-        user: user[0]._id.trim(),
-      });
-      document.location.reload(true);
+      await axios.post(
+        "https://food-app-backend-bdm8.onrender.com/api/user/cart",
+        {
+          food: foodId,
+          user: user._id,
+        }
+      );
+      // document.location.reload(true);
     } catch (err) {
       console.log(err);
     }
