@@ -9,6 +9,7 @@
   margin: 5rem;
 }
 
+
 .categoryName {
   font-size: 80px;
   text-align: center;
@@ -30,6 +31,11 @@
   margin: 15px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.item:hover {
+  box-shadow: 0px 3px 65px 0px #efa151 !important;
+  /* margin-top: 1rem;
+  margin-bottom: 1rem; */
 }
 
 .item-card img {

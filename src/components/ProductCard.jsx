@@ -8,7 +8,8 @@ const ProductCard = ({ foodItem, addToCart, user }) => {
   
   return (
     <>
-      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
+    {/* // add 0px 3px 65px 0px #efa151 boxshadow */}
+      <div className="w-full max-w-sm my-8 bg-white border border-gray-200 rounded-lg shadow item first-letter">
         <div
           onClick={() => {
             return user

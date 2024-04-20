@@ -21,6 +21,7 @@ import ErrorPage from "./components/ErrorPage";
 // import { PaymentAction } from "./redux/actions/payAction";
 import PayModal from "./components/PayModal";
 import Tracker from "./components/Tracker";
+import ReviewSection from "./components/ReviewSection";
 
 // if (!userCredentials) {
 // localStorage.setItem("user logged in", JSON.stringify([{ email: null }]));
@@ -41,10 +42,11 @@ let App = () => {
       <Route exact path="/">
         <Navbar />
         <MainCarousel />
-        <MainImage />
+        {/* <MainImage /> */}
         <FoodRow type="Breakfast" />
         <FoodRow type="Lunch" />
         <FoodRow type="Snacks" />
+        <ReviewSection />
         <Footer />
       </Route>
       <Route path="/signin">
