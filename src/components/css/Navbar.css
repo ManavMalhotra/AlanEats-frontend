@@ -2,21 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 0;
+  /* top: 0; */
   width: 100%;
   z-index: 5;
-  background-color: white;
-  height: 15vh;
+  background-color: transparent;
+  /* height: 15vh; */
 }
 
-.nav img {
+/* .nav img {
   object-fit: contain;
   width: 140px;
   height: 110px;
   border-radius: 30%;
   margin-left: 15px;
   padding-bottom: 0px;
-}
+} */
 
 .nav_search {
   display: flex;
@@ -116,4 +116,37 @@
   border: none;
   outline: none;
   background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  /* .nav img {
+    width: 100px;
+    height: 80px;
+  }
+ */
+  
+
+  /* .nav_search {
+    display: none;
+  } */
+
+  .nav_header {
+    margin-right: 10px;
+  }
+
+  .nav_signin {
+    padding: 0px 5px;
+  }
+
+  .nav_cart {
+    margin: 0px 10px;
+  }
+
+  .nav_searchIcon {
+    padding: 0px 5px;
+  }
+
+  .nav_search .MuiSvgIcon-root {
+    font-size: 2rem !important;
+  }
 }

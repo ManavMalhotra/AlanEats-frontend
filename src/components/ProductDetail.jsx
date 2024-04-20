@@ -7,7 +7,7 @@ import Review from "./Review";
 import AddReview from "./AddReview";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { capitalize } from "@material-ui/core";
-
+import Checkout from "./Checkout";
 const ProductDetail = () => {
   let { foodId } = useParams();
   let [details, setDetails] = useState([]);
@@ -21,8 +21,6 @@ const ProductDetail = () => {
     setUser(user);
     console.log(user);
   }, []);
-
-
 
   let addToCart = async () => {
     try {
@@ -78,33 +76,59 @@ const ProductDetail = () => {
   }, []);
 
   return (
-    <>
-      <div className="productDetail">
-        <div className="my_product">
-          <div className="product_detailsInfo">
-            <h3>{details.label}</h3>
-            <h3>{`₹${details.price}`}</h3>
-            <div className="addToCart">
+    <div className="px-8 py-8 text-center md:px-28 md:mx-auto">
+      <div
+        className="flex flex-wrap gap-4 px-4 py-8 rounded-lg shadow-lg md:px-16"
+        style={{
+          backgroundColor: "#f7f7f7",
+          borderRadius: "20px",
+          backgroundShadow: "0px 0px 10px 0px #000000",
+        }}
+      >
+        {/* Image and Price*/}
+        <div className="flex flex-wrap flex-1 px-8 py-8 border rounded-lg md:gap-16 justify-normal md:flex-nowrap">
+          <img
+            src={details.image_url}
+            alt="food"
+            className="w-full rounded-lg h-60 md:w-96 md:h-64"
+          />
+          <div className="flex flex-col justify-between flex-1 gap-4 mt-4 md:items-center md:gap-16 md:flex-row ">
+            <div>
+              <h3 className="text-3xl font-bold">{details.label}</h3>
+              <h3 className="text-xl font-medium">{`₹${details.price}`}</h3>
+            </div>
+            <div className="flex flex-wrap gap-4 px-4 py-2 border rounded-full cursor-pointer addToCart lg:flex-nowrap">
+              <h1 className="text-xl font-semibold text-red-500">
+                Add to Cart
+              </h1>
               <AddShoppingCartIcon
+                className="text-3xl text-red-500 cursor-pointer hover"
                 onClick={() => {
                   addToCart();
                 }}
               />
             </div>
           </div>
-          <div className="product_img">
-            <img src={details.image_url} alt="product image" />
-          </div>
         </div>
-        <div className="product_ingredients">
-          <div className="ingredient-heading">
-            <h1>Ingredients</h1>
-          </div>
-          <div className="ingredients">
+
+        {/* Ingredients */}
+        <div className="flex-2" style={{}}>
+          <h1 className="my-4 text-3xl font-semibold">Ingredients</h1>
+          <div className="flex flex-wrap items-center justify-start">
             {ingredients.map((ingredient) => (
-              <div className="ingredient-detail" key={ingredient._id}>
-                <img src={ingredient.ingredient_Image} alt="ingredient image" />
-                <h4>{capitalize(ingredient.description)}</h4>
+              <div
+                className="flex flex-col items-center mx-4 my-2 rounded-full"
+                key={ingredient._id}
+                style={{}}
+              >
+                <img
+                  src={ingredient.ingredient_Image}
+                  alt="ingredients"
+                  className="w-16 h-16 bg-transparent rounded-full md:h-24 md:w-24 "
+                />
+                <h4 className="text-xl font-medium">
+                  {capitalize(ingredient.description)}
+                </h4>
               </div>
             ))}
           </div>
@@ -121,7 +145,7 @@ const ProductDetail = () => {
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

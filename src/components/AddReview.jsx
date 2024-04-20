@@ -22,7 +22,6 @@ import axios from "axios";
 const AddReview = ({ itemDetails }) => {
   let [value, setValue] = useState(0.5);
   
-  let [ setHover] = useState("");
   let [reviewDescription, setReviewDescription] = useState("");
 
   let userCredentials = localStorage.getItem("user logged in");
@@ -71,7 +70,6 @@ const AddReview = ({ itemDetails }) => {
                 console.log(newValue,value);
               }}
               onChangeActive={(event, newHover) => {
-                setHover(newHover);
               }}
               emptyIcon={
                 <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />

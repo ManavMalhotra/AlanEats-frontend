@@ -115,7 +115,6 @@ const Checkout = () => {
         history.push("/checkout/payment")
       ) : (
         <>
-          <Navbar />
           <div className="checkout">
             <div className="checkout_img">
               <img src={CartImg} alt="" />

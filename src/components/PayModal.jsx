@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { capitalize } from "@material-ui/core";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import { capitalize, Modal } from "@material-ui/core";
 import { PayAction, PaymentAction } from "../redux/actions/payAction";
 import { useDispatch, useSelector } from "react-redux";
 import { AlertMessage } from "./AlertMessage";

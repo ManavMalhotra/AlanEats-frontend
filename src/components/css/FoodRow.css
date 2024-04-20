@@ -9,7 +9,6 @@
   margin: 5rem;
 }
 
-
 .categoryName {
   font-size: 80px;
   text-align: center;
@@ -67,5 +66,5 @@
 
 .addToCart:hover {
   transform: scale(1.1);
-  color: rgb(116, 110, 110);
+  transition: transform 0.5s;
 }
