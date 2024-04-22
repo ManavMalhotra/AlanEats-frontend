@@ -118,7 +118,7 @@ const Navbar = () => {
             history.push("/checkout");
           }}
         >
-          <ShoppingBasketIcon className="cartIcon" />
+          <ShoppingBasketIcon className="cursor-pointer cartIcon" />
         </div>
 
         {!user ? (
